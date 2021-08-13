@@ -1,6 +1,6 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
-const fs = require('fs-extra');
+const fs = require('fs');
 const _ = require('lodash');
 
 const get_issue_comments = async (octokit, owner, repo, issue) => {
@@ -10,6 +10,13 @@ const get_issue_comments = async (octokit, owner, repo, issue) => {
     issue_number: issue.number,
   });  
 };
+
+const mkdir = (dirPath) => {
+  const isExists = fs.existsSync(dirPath);
+  if( !isExists ) {
+      fs.mkdirSync(dirPath, { recursive: true });
+  }
+}
 
 const convert_issue_to_markdown = (issue, useSeperator) => {
   const head = 
@@ -69,6 +76,9 @@ tags: ${JSON.stringify(issue.tags)}
       
       issue.comments = comments;
     }
+
+    // make output folder if necessary
+    mkdir(output);
 
     // Export issue to markdown
     const markdowns = _.map(issues, it => convert_issue_to_markdown(it, useSeperator));
