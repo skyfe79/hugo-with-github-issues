@@ -1,14 +1,16 @@
 on:
-  workflow_dispatch:
+  [push]
     
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
+      - name: checkout
+        uses: actions/checkout@v1
       - name: Hello world action step
         id: hello
-        uses: skyfe79/hugo-with-github-issues@v0.4
+        uses: ./ # Uses an action in the root directory
         with:
           who-to-greet: 'Mona the Octocat'
       - name: Get the output time
