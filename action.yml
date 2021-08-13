@@ -1,13 +1,30 @@
 name: 'Hello World'
 description: 'Greet someone and record the time'
 inputs:
-  who-to-greet:
-    description: 'Who to greet'
+  github-token:
+    description: 'github token'
     required: true
-    default: 'World'
-outputs:
-  time:
-    description: 'The time we greeted you'
+  repo:
+    description: 'repo to export'
+    required: true
+  owner:
+    description: 'repo owner'
+    required: true
+  skip-author:
+    description: 'skip issue written by the skip-author'
+    required: false
+  issue-state:
+    description: 'export issues only in state(open or closed)'
+    required: true
+    default: 'all'
+  use-issue-seperator:
+    description: 'use seperator among comments'
+    required: true
+    default: 'false'
+  output:
+    description: 'destination folder to store markdown files'
+    required: true
+    default: 'content'
 runs:
   using: 'node12'
-  main: './dist/index.js'
+  main: 'dist/index.js'
