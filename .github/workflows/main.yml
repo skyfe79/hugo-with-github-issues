@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v1
       - name: Fetch issues and generate markdowns
         # uses: ./ # Uses an action in the root directory when you testing on local env.
-        uses: skyfe79/hugo-with-github-issues@v0.7
+        uses: skyfe79/hugo-with-github-issues@v0.8
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           repo: 'test-repo'
