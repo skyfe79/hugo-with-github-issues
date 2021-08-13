@@ -2,6 +2,10 @@
 
 `hugo-with-github-issues` converts github issues to markdowns. Github issue has a title and comments. `hugo-with-github-issues` connects comments to the one body content. Github issue supports to upload images to the comments so markdown can contains images.
 
+## Example Repo
+
+- [https://github.com/skyfe79/testing-hugo-with-github-issues](https://github.com/skyfe79/testing-hugo-with-github-issues)
+
 ## Usage
 
 This is workflow example:
