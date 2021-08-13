@@ -1,5 +1,8 @@
 name: 'hugo-with-github-issues'
 description: 'Convert github issues to markdowns'
+branding:
+  icon: 'archive'
+  color: 'blue'
 inputs:
   github-token:
     description: 'github token'
