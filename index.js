@@ -73,7 +73,7 @@ tags: ${JSON.stringify(issue.tags)}
     // Export issue to markdown
     const markdowns = _.map(issues, it => convert_issue_to_markdown(it, useSeperator));
     markdowns.forEach(it => {
-      fs.outputFile(`${output}/${it.filename}', it.content, error => {
+      fs.outputFile(`${output}/${it.filename}`, it.content, error => {
         if (error) {
           core.setFailed(error.message);
         }
