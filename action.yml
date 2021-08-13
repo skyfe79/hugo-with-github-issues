@@ -1,5 +1,5 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'hugo-with-github-issues'
+description: 'Convert github issues to markdowns'
 inputs:
   github-token:
     description: 'github token'
