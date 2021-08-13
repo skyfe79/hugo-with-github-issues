@@ -6,11 +6,11 @@
 
 - [https://github.com/skyfe79/testing-hugo-with-github-issues](https://github.com/skyfe79/testing-hugo-with-github-issues)
 
-### This issues is
+### This issue is
 
 - [https://github.com/skyfe79/blog.contents/issues/9](https://github.com/skyfe79/blog.contents/issues/9)
 
-### converted below:
+### converted below the post:
 
 - [https://blog.burt.pe.kr/posts/skyfe79-blog.contents-970590914-post-9/](https://blog.burt.pe.kr/posts/skyfe79-blog.contents-970590914-post-9/)
 
