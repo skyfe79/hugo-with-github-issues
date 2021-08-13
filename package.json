@@ -1,0 +1,24 @@
+{
+  "name": "hugo-with-github-issues",
+  "version": "1.0.0",
+  "description": "hugo-with-github-issues",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skyfe79/hugo-with-github-issues.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skyfe79/hugo-with-github-issues/issues"
+  },
+  "homepage": "https://github.com/skyfe79/hugo-with-github-issues#readme",
+  "dependencies": {
+    "@actions/core": "^1.4.0",
+    "@actions/github": "^5.0.0"
+  }
+}
