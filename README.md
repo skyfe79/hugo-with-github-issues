@@ -6,6 +6,15 @@
 
 - [https://github.com/skyfe79/testing-hugo-with-github-issues](https://github.com/skyfe79/testing-hugo-with-github-issues)
 
+### This issues is
+
+- [https://github.com/skyfe79/blog.contents/issues/9](https://github.com/skyfe79/blog.contents/issues/9)
+
+### converted below:
+
+- [https://blog.burt.pe.kr/posts/skyfe79-blog.contents-970590914-post-9/](https://blog.burt.pe.kr/posts/skyfe79-blog.contents-970590914-post-9/)
+
+
 ## Usage
 
 This is workflow example:
