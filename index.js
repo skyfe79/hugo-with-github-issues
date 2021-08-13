@@ -1,6 +1,6 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
-const fs = require('fs');
+const fs = require('fs-extra');
 const _ = require('lodash');
 
 const get_issue_comments = async (octokit, owner, repo, issue) => {
@@ -33,20 +33,14 @@ tags: ${JSON.stringify(issue.tags)}
 (async () => {
   try {
     const myToken = core.getInput('github-token');
+    const octokit = github.getOctokit(myToken);
+
     const repo = core.getInput('repo');
     const owner = core.getInput('owner');
     const skipAuthor = core.getInput('skip-author');
     const state = core.getInput('issue-state');
     const useSeperator = core.getBooleanInput('use-issue-seperator');
-
-    if (!skipAuthor) {
-      console.log("스킵 비어있음");
-    } else {
-      console.log("스킵", skipAuthor);
-    }
-
-    const octokit = github.getOctokit(myToken);
-
+    
     let issues = await octokit.rest.issues.listForRepo({
       owner,
       repo,
@@ -77,19 +71,12 @@ tags: ${JSON.stringify(issue.tags)}
 
     // Export issue to markdown
     const markdowns = _.map(issues, it => convert_issue_to_markdown(it, useSeperator));
-    console.log(JSON.stringify(issues, null, 2));
-    console.log(JSON.stringify(markdowns, null, 2));
-
     markdowns.forEach(it => {
-      fs.writeFile(it.filename, it.content, error => {
+      fs.outputFile(it.filename, it.content, error => {
         if (error) {
           core.setFailed(error.message);
         }
       });
-
-      fs.readFile(it.filename, 'utf8', (error, data) => {
-        console.log(data);
-      })
     });
   } catch (error) {
     core.setFailed(error.message);

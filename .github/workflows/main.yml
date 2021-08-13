@@ -2,22 +2,22 @@ on:
   workflow_dispatch:
     
 jobs:
-  hello_world_job:
+  convert_issues_to_markdown_job:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: Convert issues to markdown.
     steps:
       - name: checkout
         uses: actions/checkout@v1
-      - name: Hello world action step
-        id: hello
+      - name: Fetch issues and generate markdowns
         # uses: ./ # Uses an action in the root directory when you testing on local env.
-        uses: skyfe79/hugo-with-github-issues@v0.5
+        uses: skyfe79/hugo-with-github-issues@v0.7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           repo: 'test-repo'
           owner: 'skyfe79'
           skip-author: 'utterances-bot'
           use-issue-seperator: 'false'
+          output: 'content'
       - name: Commit files
         run: |
           git config --local user.email "skyfe79@gmail.com"
