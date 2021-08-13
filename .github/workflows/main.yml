@@ -16,7 +16,7 @@ jobs:
           owner: 'skyfe79'
           skip-author: 'utterances-bot'
           use-issue-seperator: 'false'
-          output: 'content'
+          output: 'content/posts'
       - name: Commit files
         run: |
           git config --local user.email "skyfe79@gmail.com"
