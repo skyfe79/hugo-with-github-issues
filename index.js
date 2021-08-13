@@ -40,7 +40,8 @@ tags: ${JSON.stringify(issue.tags)}
     const skipAuthor = core.getInput('skip-author');
     const state = core.getInput('issue-state');
     const useSeperator = core.getBooleanInput('use-issue-seperator');
-    
+    const output = core.getInput('output');
+
     let issues = await octokit.rest.issues.listForRepo({
       owner,
       repo,
@@ -72,7 +73,7 @@ tags: ${JSON.stringify(issue.tags)}
     // Export issue to markdown
     const markdowns = _.map(issues, it => convert_issue_to_markdown(it, useSeperator));
     markdowns.forEach(it => {
-      fs.outputFile(it.filename, it.content, error => {
+      fs.outputFile(`${output}/${it.filename}', it.content, error => {
         if (error) {
           core.setFailed(error.message);
         }
