@@ -14,6 +14,12 @@
 
 - [https://blog.burt.pe.kr/posts/skyfe79-blog.contents-970590914-post-9/](https://blog.burt.pe.kr/posts/skyfe79-blog.contents-970590914-post-9/)
 
+### Command Labels
+
+- `::./content/{specific folder name}` - store markdown file to the `content/{specific folder name}`
+- `::DRAFT` - skip conversion.
+- `::DONE` - skip conversion.
+
 
 ## Usage
 
@@ -73,7 +79,7 @@ skip-author:
   required: false
 
 issue-state:
-  description: 'export issues only in state(open or closed)'
+  description: 'export issues only in state(all, open or closed)'
   required: true
   default: 'all'
 

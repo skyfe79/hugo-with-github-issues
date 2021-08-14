@@ -9,14 +9,15 @@ jobs:
       - name: checkout
         uses: actions/checkout@v1
       - name: Fetch issues and generate markdowns
-        uses: skyfe79/hugo-with-github-issues@v1.2
+        uses: skyfe79/hugo-with-github-issues@v1.6
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          repo: 'test-repo'
+          repo: 'testing-hugo-with-github-issues'
           owner: 'skyfe79'
           skip-author: 'utterances-bot'
           use-issue-seperator: 'false'
           output: 'content/posts'
+          issue-state: 'all'
       - name: Commit files
         run: |
           git config --local user.email "skyfe79@gmail.com"
