@@ -1,7 +1,5 @@
 const core = require('@actions/core');
-const github = require('@actions/github');
-const simpleOctokit = require('simple-octokit')
-const octokit = simpleOctokit('my-github-token')
+const simpleOctokit = require('simple-octokit');
 const fs = require('fs');
 const _ = require('lodash');
 
