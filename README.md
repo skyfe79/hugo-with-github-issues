@@ -78,6 +78,11 @@ skip-author:
   description: 'skip issue written by the skip-author'
   required: false
 
+skip-pull-requests:
+  description: 'skip pull request issue'
+  required: true
+  default: false
+
 issue-state:
   description: 'export issues only in state(all, open or closed)'
   required: true
