@@ -50,6 +50,7 @@ tags: ${JSON.stringify(issue.tags)}
     const skipAuthor = core.getInput('skip-author');
     const state = core.getInput('issue-state');
     const useSeperator = core.getBooleanInput('use-issue-seperator');
+    const skipPullRequests = core.getBooleanInput('skip-pull-requests');
     const output = core.getInput('output');
 
     const iterable = octokit.issues.listForRepo.all({
@@ -63,6 +64,10 @@ tags: ${JSON.stringify(issue.tags)}
     for await (const response of iterable) {      
       for (let issue of response.data) {
         if (skipAuthor && issue.user.login === skipAuthor) {
+          continue;
+        }
+
+        if (skipPullRequests && "pull_request" in issue) {
           continue;
         }
 

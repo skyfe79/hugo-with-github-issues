@@ -24,6 +24,10 @@ inputs:
     description: 'use seperator among comments'
     required: true
     default: 'false'
+  skip-pull-requests:
+    description: 'skip pull requests issues'
+    required: true
+    default: 'false'
   output:
     description: 'destination folder to store markdown files'
     required: true
