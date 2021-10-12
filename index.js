@@ -24,6 +24,7 @@ const convert_issue_to_markdown = (issue, useSeperator) => {
   `---
 title: "${issue.title}"
 date: ${issue.created_at}
+author: "${issue.user.login}"
 draft: false
 tags: ${JSON.stringify(issue.tags)}
 ---\n\n`
