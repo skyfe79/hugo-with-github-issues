@@ -1,7 +1,7 @@
 {
-  "name": "hugo-with-github-issues",
-  "version": "1.0.0",
-  "description": "hugo-with-github-issues",
+  "name": "hugo-with-github-issues-fork",
+  "version": "1.0.1",
+  "description": "hugo-with-github-issues-fork",
   "main": "index.js",
   "scripts": {
     "build": "ncc build index.js --license licenses.txt",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/skyfe79/hugo-with-github-issues.git"
+    "url": "git+https://github.com/sredevops/hugo-with-github-issues.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "skyfe79",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/skyfe79/hugo-with-github-issues/issues"
+    "url": "https://github.com/sredevops/hugo-with-github-issues/issues"
   },
-  "homepage": "https://github.com/skyfe79/hugo-with-github-issues#readme",
+  "homepage": "https://github.com/sredevops/hugo-with-github-issues#readme",
   "dependencies": {
     "@actions/core": "^1.4.0",
     "@actions/github": "^5.0.0",
